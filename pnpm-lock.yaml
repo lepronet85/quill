@@ -14,6 +14,21 @@ dependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.0)
+  '@tanstack/react-query':
+    specifier: ^5.17.0
+    version: 5.17.0(react@18.2.0)
+  '@trpc/client':
+    specifier: ^10.45.0
+    version: 10.45.0(@trpc/server@10.45.0)
+  '@trpc/next':
+    specifier: ^10.45.0
+    version: 10.45.0(@tanstack/react-query@5.17.0)(@trpc/client@10.45.0)(@trpc/react-query@10.45.0)(@trpc/server@10.45.0)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0)
+  '@trpc/react-query':
+    specifier: ^10.45.0
+    version: 10.45.0(@tanstack/react-query@5.17.0)(@trpc/client@10.45.0)(@trpc/server@10.45.0)(react-dom@18.2.0)(react@18.2.0)
+  '@trpc/server':
+    specifier: ^10.45.0
+    version: 10.45.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -38,6 +53,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.0)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@types/node':
@@ -366,6 +384,67 @@ packages:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.0
+    dev: false
+
+  /@tanstack/query-core@5.17.0:
+    resolution: {integrity: sha512-LoBaPtbMY26kRS+ohII4thTsWkJJsXKGitOLikTo2aqPA4yy7cfFJITs8DRnuERT7tLF5xfG9Lnm33Vp/38Vmw==}
+    dev: false
+
+  /@tanstack/react-query@5.17.0(react@18.2.0):
+    resolution: {integrity: sha512-iNSn6ZA7mHUjrT0a271eKoa1oR1HznlrGbb475awft1kuP3zrhyUCrI8tlGowOr7zRoAxJholjwxO+gfz1IObw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.17.0
+      react: 18.2.0
+    dev: false
+
+  /@trpc/client@10.45.0(@trpc/server@10.45.0):
+    resolution: {integrity: sha512-m091R1qte9rvkvL8N1e/mzrbb8S4gb+Q4ZNJnEGDgd7kic/6a8DFgSciBTiCoSp0YwOTVhyQzSrrA/sZI6PhBg==}
+    peerDependencies:
+      '@trpc/server': 10.45.0
+    dependencies:
+      '@trpc/server': 10.45.0
+    dev: false
+
+  /@trpc/next@10.45.0(@tanstack/react-query@5.17.0)(@trpc/client@10.45.0)(@trpc/react-query@10.45.0)(@trpc/server@10.45.0)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-saXajAb5GBpos9BNEtq/BeTOxmM4oCP3kyuGlMopNtHoacr71xHCItFnLsPWffM4DVW88uOXCFWaOtpOs5ThBw==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.45.0
+      '@trpc/react-query': 10.45.0
+      '@trpc/server': 10.45.0
+      next: '*'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 5.17.0(react@18.2.0)
+      '@trpc/client': 10.45.0(@trpc/server@10.45.0)
+      '@trpc/react-query': 10.45.0(@tanstack/react-query@5.17.0)(@trpc/client@10.45.0)(@trpc/server@10.45.0)(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/server': 10.45.0
+      next: 14.0.3(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@trpc/react-query@10.45.0(@tanstack/react-query@5.17.0)(@trpc/client@10.45.0)(@trpc/server@10.45.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-MMc2pLwoaLZVwvLQyzJv3uEmdG3lORhifhVzR/drtavwDYwt+OEvH0w3s1zC7RaDdFpc6Nj2kkpHmdoU7BlAAw==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.45.0
+      '@trpc/server': 10.45.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 5.17.0(react@18.2.0)
+      '@trpc/client': 10.45.0(@trpc/server@10.45.0)
+      '@trpc/server': 10.45.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@trpc/server@10.45.0:
+    resolution: {integrity: sha512-2Fwzv6nqpE0Ie/G7PeS0EVR89zLm+c1Mw7T+RAGtU807j4oaUx0zGkBXTu5u9AI+j+BYNN2GZxJcuDTAecbr1A==}
     dev: false
 
   /@types/json5@0.0.29:
@@ -2825,3 +2904,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
